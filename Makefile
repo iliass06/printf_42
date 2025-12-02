@@ -1,7 +1,7 @@
 NAME = libftprintf.a
 CC = cc
-SRCS = ft_printf.c ft_putchar.c ft_puthex.c ft_putnbr_unsigned.c ft_putnbr.c ft_putpointer.c ft_putstr.c
-OBJCTS = ft_printf.o ft_putchar.o ft_puthex.o ft_putnbr_unsigned.o ft_putnbr.o ft_putpointer.o ft_putstr.o
+SRCS = ft_printf.c ft_putchar.c ft_puthex.c ft_putnbr_unsigned.c ft_putnbr.c ft_putpointer.c ft_putstr.c ft_type.c
+OBJCTS = ft_printf.o ft_putchar.o ft_puthex.o ft_putnbr_unsigned.o ft_putnbr.o ft_putpointer.o ft_putstr.o ft_type.o
 FLAGS = -Wall -Wextra -Werror
 AR = ar rcs
 HEADER = ft_printf.h

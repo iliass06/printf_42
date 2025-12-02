@@ -10,20 +10,20 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"ft_printf.h"
+#include "ft_printf.h"
 
-int ft_putnbr_unsigned(unsigned int n)
+int	ft_putnbr_unsigned(unsigned int n)
 {
-    int count;
-    char c;
+	int		count;
+	char	c;
 
-    count = 0;
-    if (n > 9)
-    {
-        count += ft_putnbr_unsigned(n / 10);
-    }
-    c = (n % 10) + '0';
-    write(1, &c, 1);
-    count++;
-    return (count);
+	count = 0;
+	if (n > 9)
+	{
+		count += ft_putnbr_unsigned(n / 10);
+	}
+	c = (n % 10) + '0';
+	write(1, &c, 1);
+	count++;
+	return (count);
 }
