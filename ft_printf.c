@@ -18,9 +18,7 @@ int	ft_printf(const char *format, ...)
 	int		count;
 
 	count = 0;
-	if (!format)
-		return (-1);
-	if (write(1, 0, 0) == -1)
+	if (!format || write(1, 0, 0) == -1)
 		return (-1);
 	va_start(arg, format);
 	while (*format)
@@ -31,7 +29,7 @@ int	ft_printf(const char *format, ...)
 		{
 			format++;
 			if (*format == '\0')
-				break;
+				break ;
 			count += ft_type(*format, arg);
 		}
 		format++;

@@ -35,5 +35,3 @@ int	ft_type(char format, va_list arg)
 		count += ft_putchar(format);
 	return (count);
 }
-
-
