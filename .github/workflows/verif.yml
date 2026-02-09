@@ -30,4 +30,4 @@ jobs:
 
     # Étape D : Vérifier que l'exécutable existe (Preuve que ça a marché)
     - name: Vérifier l'exécutable
-      run: ls -l ./ton_executable
+      run: ls -l ./libftprintf.a
