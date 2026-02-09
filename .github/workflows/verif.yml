@@ -1,0 +1,33 @@
+name: Vérification Compilation C
+
+# 1. LE DÉCLENCHEUR (TRIGGER)
+# Quand est-ce que ce workflow doit se lancer ?
+on:
+  push:
+    branches: [ "main" ]  # Se lance quand tu push sur la branche main
+  pull_request:
+    branches: [ "main" ]
+
+# 2. LES JOBS (LE TRAVAIL)
+jobs:
+  build-and-test:
+    # Sur quelle machine virtuelle cela doit tourner ?
+    runs-on: ubuntu-latest
+
+    # 3. LES ÉTAPES (STEPS)
+    steps:
+    # Étape A : Le robot récupère ton code
+    - name: Récupérer le code (Checkout)
+      uses: actions/checkout@v3
+
+    # Étape B : On installe les outils (si besoin, souvent gcc est déjà là)
+    - name: Installer Make et GCC
+      run: sudo apt-get install -y make gcc
+
+    # Étape C : On compile ton projet
+    - name: Lancer la compilation
+      run: make
+
+    # Étape D : Vérifier que l'exécutable existe (Preuve que ça a marché)
+    - name: Vérifier l'exécutable
+      run: ls -l ./ton_executable
